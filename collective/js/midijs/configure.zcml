@@ -1,0 +1,22 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    i18n_domain="collective.js.midijs">
+
+  <browser:resourceDirectory
+    name="collective.js.midijs"
+    directory="resources"
+    />
+<!--
+  <include file="upgrades.zcml"/>
+-->
+  <genericsetup:registerProfile
+      name="default"
+      title="collective.js.midijs"
+      directory="profiles/default"
+      description='Extension profile for collective.js.midijs.'
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+
+</configure>
