@@ -5,7 +5,7 @@
     i18n_domain="collective.js.midijs">
 
   <browser:resourceDirectory
-    name="collective.js.midijs"
+    name="midijs"
     directory="resources"
     />
 <!--

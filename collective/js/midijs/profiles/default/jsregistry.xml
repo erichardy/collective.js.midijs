@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<object name="portal_javascripts">
+ <javascript cacheable="False" compression="none" cookable="True"
+    enabled="True" expression="python:context.portal_type=='abctune'"
+    id="++resource++midijs/inc/jasmid/midifile.js" inline="False"/>
+ <javascript cacheable="False" compression="none" cookable="True"
+    enabled="True" expression=""
+    id="++resource++midijs/inc/jasmid/replayer.js" inline="False"/>
+ <javascript cacheable="False" compression="none" cookable="True"
+    enabled="True" expression=""
+    id="++resource++midijs/inc/jasmid/stream.js" inline="False"/>
+ <javascript cacheable="False" compression="none" cookable="True"
+    enabled="True" expression=""
+    id="++resource++midijs/js/MIDI/AudioDetect.js" inline="False"/>
+ <javascript cacheable="False" compression="none" cookable="True"
+    enabled="True" expression=""
+    id="++resource++midijs/js/MIDI/LoadPlugin.js" inline="False"/>
+ <javascript cacheable="False" compression="none" cookable="True"
+    enabled="True" expression=""
+    id="++resource++midijs/js/MIDI/Player.js" inline="False"/>
+ <javascript cacheable="False" compression="none" cookable="True"
+    enabled="True" expression=""
+    id="++resource++midijs/js/MIDI/Plugin.js" inline="False"/> 
+</object>
