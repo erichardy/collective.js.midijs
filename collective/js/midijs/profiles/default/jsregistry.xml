@@ -21,4 +21,17 @@
  <javascript cacheable="False" compression="none" cookable="True"
     enabled="True" expression=""
     id="++resource++midijs/js/MIDI/Plugin.js" inline="False"/> 
+ <javascript cacheable="False" compression="none" cookable="True"
+    enabled="True" expression=""
+    id="++resource++midijs/js/Window/DOMLoader.XMLHttp.js" inline="False"/> 
+ <javascript cacheable="False" compression="none" cookable="True"
+    enabled="True" expression=""
+    id="++resource++midijs/js/Window/DOMLoader.script.js" inline="False"/> 
+ <javascript cacheable="False" compression="none" cookable="True"
+    enabled="True" expression=""
+    id="++resource++midijs/js/Window/Event.js" inline="False"/> 
+ <javascript cacheable="False" compression="none" cookable="True"
+    enabled="True" expression=""
+    id="++resource++midijs/js/Widgets/Loader.js" inline="False"/> 
+
 </object>

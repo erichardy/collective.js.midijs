@@ -1,0 +1,39 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="plone">
+
+<head>
+
+</head>
+
+<body>
+<metal:main fill-slot="main">
+<div id="content-core">
+
+
+<div class="player" style="height: 42px; box-shadow: 0 -1px #000; margin-bottom: 0; border-bottom-right-radius: 0; border-bottom-left-radius: 0;">
+  <div style="margin: 0 auto; width: 160px; float: right;">
+  <input type="image" src="++resource++midijs/images/pause.png" align="absmiddle" value="pause" onclick="pausePlayStop()" id="pausePlayStop">
+  <input type="image" src="++resource++midijs/images/stop.png" align="absmiddle" value="stop" onclick="pausePlayStop(true)">
+  <input type="image" src="++resource++midijs/images/backward.png" align="absmiddle" value="stop" onclick="getNextSong(-1);">
+  <input type="image" src="++resource++midijs/images/forward.png" align="absmiddle" value="stop" onclick="getNextSong(+1);">
+  </div>
+  <div class="time-controls" style="float: left; margin: 0; position: relative; top: 5px;">
+   <span id="time1" class="time">0:00</span>
+   <span id="capsule">
+    <span id="cursor"></span>
+   </span>
+   <span id="time2" class="time" style="text-align: left;">-0:00</span>
+  </div>
+</div>
+
+</div>
+
+</metal:main>
+
+</body>
+</html>
