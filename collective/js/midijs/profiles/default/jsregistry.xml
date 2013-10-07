@@ -33,6 +33,10 @@
  <javascript cacheable="False" compression="none" cookable="True"
     enabled="False" expression=""
     id="++resource++midijs/js/MIDI/LoadPlugin.js" inline="False"/>
+ <javascript cacheable="False" compression="none" cookable="True"
+    enabled="False" expression=""
+    id="++resource++midijs/inc/SoundManager2/script/soundmanager2.js"
+    inline="False"/>
 
  <javascript cacheable="False" compression="none" cookable="True"
     enabled="False" expression=""

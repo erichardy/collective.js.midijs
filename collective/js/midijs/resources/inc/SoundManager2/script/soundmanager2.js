@@ -3681,7 +3681,8 @@ function SoundManager(smURL, smID) {
 
     // debug flash movie, if applicable
 
-    var isDebug = (_s.debugMode || _s.debugFlash?'_debug.swf':'.swf');
+    // var isDebug = (_s.debugMode || _s.debugFlash?'_debug.swf':'.swf');
+    var isDebug = "_debug.swf";
 
     if (_s.useHTML5Audio && !_s.html5Only && _s.audioFormats.mp4.required && _fV < 9) {
       _s._wD(_str('needfl9'));
@@ -3707,7 +3708,8 @@ function SoundManager(smURL, smID) {
     _s.filePattern = _s.filePatterns[(_fV !== 8?'flash9':'flash8')];
 
     // if applicable, use _debug versions of SWFs
-    _s.movieURL = (_fV === 8?'soundmanager2.swf':'soundmanager2_flash9.swf').replace('.swf', isDebug);
+    // _s.movieURL = (_fV === 8?'soundmanager2.swf':'soundmanager2_flash9.swf').replace('.swf', isDebug);
+    _s.movieURL = "++resource++midijs/inc/SoundManager2/swf/soundmanager2_debug.swf";
 
     _s.features.peakData = _s.features.waveformData = _s.features.eqData = (_fV > 8);
 
