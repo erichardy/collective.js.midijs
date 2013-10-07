@@ -7,13 +7,42 @@
       i18n:domain="plone">
 
 <head>
+<metal:js fill-slot="javascript_head_slot">
+	<script type="text/javascript" tal:attributes="src string:${portal_url}/++resource++midijs/js/Window/Event.js"></script>
+	<script type="text/javascript" tal:attributes="src string:${portal_url}/++resource++midijs/js/Window/Event.Mouse.js"></script>
+	
+	<script type="text/javascript" tal:attributes="src string:${portal_url}/++resource++midijs/inc/Base64.js"></script>
+	<script type="text/javascript" tal:attributes="src string:${portal_url}/++resource++midijs/inc/base64binary.js"></script>
+	<script type="text/javascript" tal:attributes="src string:${portal_url}/++resource++midijs/inc/WebMIDIAPI.js"></script>
 
+	<script type="text/javascript" tal:attributes="src string:${portal_url}/++resource++midijs/js/Window/DOMLoader.XMLHttp.js"></script>
+	<script type="text/javascript" tal:attributes="src string:${portal_url}/++resource++midijs/js/Window/DOMLoader.script.js"></script>
+	
+	<script type="text/javascript" tal:attributes="src string:${portal_url}/++resource++midijs/js/MIDI/AudioDetect.js"></script>
+	<script type="text/javascript" tal:attributes="src string:${portal_url}/++resource++midijs/js/MIDI/LoadPlugin.js"></script>
+	<script type="text/javascript" tal:attributes="src string:${portal_url}/++resource++midijs/js/MIDI/Plugin.js"></script>
+	<script type="text/javascript" tal:attributes="src string:${portal_url}/++resource++midijs/js/MIDI/Player.js"></script>
+
+	<script type="text/javascript" tal:attributes="src string:${portal_url}/++resource++midijs/js/MusicTheory/Synesthesia.js"></script>
+	<script type="text/javascript" tal:attributes="src string:${portal_url}/++resource++midijs/js/Color/SpaceW3.js"></script>
+
+	<script type="text/javascript" tal:attributes="src string:${portal_url}/++resource++midijs/js/Widgets/Loader.js"></script>
+	
+	<script type="text/javascript" tal:attributes="src string:${portal_url}/++resource++midijs/inc/jasmid/stream.js"></script>
+	<script type="text/javascript" tal:attributes="src string:${portal_url}/++resource++midijs/inc/jasmid/midifile.js"></script>
+	<script type="text/javascript" tal:attributes="src string:${portal_url}/++resource++midijs/inc/jasmid/replayer.js"></script>
+
+	<script type="text/javascript" tal:attributes="src string:${portal_url}/++resource++midijs/js/example.js"></script>
+
+</metal:js>
 </head>
 
 <body>
 <metal:main fill-slot="main">
 <div id="content-core">
-
+<div id="title"></div>
+  <div style="position: fixed; top: 0; left: 0; z-index: 4; border-radius: 5px; overflow: hidden;" id="colors"></div>
+  <div style="text-align: center; border-radius: 5px; position: absolute; top: -70px; left: -40px; opacity: 0.9" id="colors"></div>
 
 <div class="player" style="height: 42px; box-shadow: 0 -1px #000; margin-bottom: 0; border-bottom-right-radius: 0; border-bottom-left-radius: 0;">
   <div style="margin: 0 auto; width: 160px; float: right;">
@@ -34,6 +63,5 @@
 </div>
 
 </metal:main>
-
 </body>
 </html>
