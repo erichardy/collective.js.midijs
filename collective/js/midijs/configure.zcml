@@ -1,6 +1,7 @@
 <configure
     xmlns="http://namespaces.zope.org/zope"
     xmlns:five="http://namespaces.zope.org/five"
+    xmlns:cmf="http://namespaces.zope.org/cmf"
     xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
     xmlns:browser="http://namespaces.zope.org/browser"
     i18n_domain="collective.js.midijs">
@@ -11,6 +12,8 @@
     name="midijs"
     directory="resources"
     />
+    
+  <cmf:registerDirectory name="midijs" />
 <!--
   <include file="upgrades.zcml"/>
 -->
