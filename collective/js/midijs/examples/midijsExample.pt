@@ -18,6 +18,8 @@
 	<script type="text/javascript" tal:attributes="src string:${portal_url}/++resource++midijs/js/Window/DOMLoader.XMLHttp.js"></script>
 	<script type="text/javascript" tal:attributes="src string:${portal_url}/++resource++midijs/js/Window/DOMLoader.script.js"></script>
 	
+	<script type="text/javascript" tal:attributes="src string:${portal_url}/++resource++midijs/js/Widgets/Loader.js"></script>
+	
 	<script type="text/javascript" tal:attributes="src string:${portal_url}/++resource++midijs/js/MIDI/AudioDetect.js"></script>
 	<script type="text/javascript" tal:attributes="src string:${portal_url}/++resource++midijs/js/MIDI/LoadPlugin.js"></script>
 	<script type="text/javascript" tal:attributes="src string:${portal_url}/++resource++midijs/inc/SoundManager2/script/soundmanager2.js"></script>
@@ -29,24 +31,23 @@
 	<script type="text/javascript" tal:attributes="src string:${portal_url}/++resource++midijs/js/MusicTheory/Synesthesia.js"></script>
 	<script type="text/javascript" tal:attributes="src string:${portal_url}/++resource++midijs/js/Color/SpaceW3.js"></script>
 
-	<script type="text/javascript" tal:attributes="src string:${portal_url}/++resource++midijs/js/Widgets/Loader.js"></script>
+	
 	
 	<script type="text/javascript" tal:attributes="src string:${portal_url}/++resource++midijs/inc/jasmid/stream.js"></script>
 	<script type="text/javascript" tal:attributes="src string:${portal_url}/++resource++midijs/inc/jasmid/midifile.js"></script>
 	<script type="text/javascript" tal:attributes="src string:${portal_url}/++resource++midijs/inc/jasmid/replayer.js"></script>
 
-	<script type="text/javascript" tal:attributes="src string:${portal_url}/++resource++midijs/js/example.js"></script>
+<script type="text/javascript" tal:attributes="src string:${portal_url}/++resource++midijs/js/example.js"></script>
 
 </metal:js>
+<metal:css fill-slot="style_slot">
+   <link rel="stylesheet" type="text/css" media="screen" tal:attributes="href string:${portal_url}/++resource++midijs/css/MIDIPlayer.css" />
+</metal:css>
 </head>
 
 <body>
 <metal:main fill-slot="main">
 <div id="content-core">
-lignes modifies dans soundmanager2.js : 3711 3684 4425<br />
-a debugger !
-pb de chargement <br /> 
-"soundManager: Verify that inc/SoundManager2/swf/++resource++midijs/inc/SoundManager2/swf/soundmanager2_debug.swf is a valid path."
 
 <div id="sm2-container"></div>
 <div id="MIDItitle"></div>
@@ -55,8 +56,8 @@ pb de chargement <br />
 
 <div class="player" style="height: 42px; box-shadow: 0 -1px #000; margin-bottom: 0; border-bottom-right-radius: 0; border-bottom-left-radius: 0;">
   <div style="margin: 0 auto; width: 160px; float: right;">
-  <input type="image" src="++resource++midijs/images/pause.png" align="absmiddle" value="pause" onclick="pausePlayStop()" id="pausePlayStop">
-  <input type="image" src="++resource++midijs/images/stop.png" align="absmiddle" value="stop" onclick="pausePlayStop(true)">
+  <input type="image" src="++resource++midijs/images/pause.png" align="absmiddle" value="pause" onclick="pausePlayStop();" id="pausePlayStop">
+  <input type="image" src="++resource++midijs/images/stop.png" align="absmiddle" value="stop" onclick="pausePlayStop(true);">
   <input type="image" src="++resource++midijs/images/backward.png" align="absmiddle" value="stop" onclick="getNextSong(-1);">
   <input type="image" src="++resource++midijs/images/forward.png" align="absmiddle" value="stop" onclick="getNextSong(+1);">
   </div>
@@ -68,6 +69,8 @@ pb de chargement <br />
    <span id="time2" class="time" style="text-align: left;">-0:00</span>
   </div>
 </div>
+
+
 
 </div>
 

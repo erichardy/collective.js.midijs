@@ -63,6 +63,7 @@ var defaultConfig = {
 widgets.Loader = function (configure) {
 	if (noCanvas) return;
 	var that = this;
+	
 	if (typeof (configure) === "string") configure = { message: configure };
 	if (typeof (configure) === "boolean") configure = { display: false };
 	if (typeof (configure) === "undefined") configure = {};
@@ -75,7 +76,7 @@ widgets.Loader = function (configure) {
 			configure[key] = defaultConfig[key];
 		}
 	}
-
+	
 	/// Setup element
 	var canvas = document.getElementById(configure.id);
 	if (!canvas) {

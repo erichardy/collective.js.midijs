@@ -75,7 +75,7 @@ connect.flash = function(filetype, instruments, conf) {
 	// fairly quick, but requires loading of individual MP3s (more http requests).
 	if (MIDI.loader) MIDI.loader.message("Flash API...");
 	DOMLoader.script.add({
-		src: conf.soundManagerUrl || "./inc/SoundManager2/script/soundmanager2.js",
+		src: conf.soundManagerUrl || "++resource++midijs/inc/SoundManager2/script/soundmanager2.js",
 		verify: "SoundManager",
 		callback: function () {
 			MIDI.Flash.connect(instruments, conf);
