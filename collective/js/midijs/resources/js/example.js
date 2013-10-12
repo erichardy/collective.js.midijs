@@ -1,12 +1,11 @@
-// jQuery(document).ready(function($) {
 if (typeof(console) === "undefined") var console = { log: function() { } };
 
-/*
+
 // Begin loading indication.
 var loader = new widgets.Loader({
 	message: "loading: Soundfont..."
 });
-*/
+
 
 // Tchaikovsky via Disklavier World.
 var songid = 0;
@@ -35,29 +34,6 @@ var pausePlayStop = function(stop) {
 };
 
 Event.add(window, "load", function(event) {
-	/*
-	var link = document.createElement('link');
-	link.href = 'http://fonts.googleapis.com/css?family=Oswald';
-	link.ref = "stylesheet";
-	link.type = "text/css";
-	document.body.appendChild(link);
-	var link = document.createElement('link');
-	link.href = 'http://fonts.googleapis.com/css?family=Andada';
-	link.ref = "stylesheet";
-	link.type = "text/css";
-	document.body.appendChild(link);
-	
-	
-	// load up the piano keys
-	var colors = document.getElementById("colors");
-	var colorElements = [];
-	for (var n = 0; n < 88; n ++) {
-		var d = document.createElement("div");
-		d.innerHTML = MIDI.noteToKey[n+21];
-		colorElements.push(d);
-		colors.appendChild(d);
-	}
-	*/
 	//
 	MIDI.loadPlugin(function () {
 		// this is the language we are running in
@@ -67,7 +43,6 @@ Event.add(window, "load", function(event) {
 		var player = MIDI.Player;
 		player.timeWarp = 1; // speed the song is played back
 		player.loadFile(song[songid++%3], player.start);
-		MIDIPlayerPercentage(player);
 		//
 		MIDIPlayerPercentage(player);
 		// loader.stop();
@@ -123,90 +98,3 @@ var MIDIPlayerPercentage = function(player) {
 		time2.innerHTML = "-" + timeFormatting(end - now);
 	});
 };
-
-/////// SPHERE ///////
-
-var ColorSphereBackground = function() {
-	var d = document;
-	var canvas = document.createElement("canvas");
-	var ctx = canvas.getContext("2d");
-	alert(ctx);
-	canvas.style.cssText = "position: fixed; left: 0; top: 0; opacity: 1";
-	canvas.style.width = window.innerWidth + "px";
-	canvas.style.height = window.innerHeight + "px";
-	document.body.appendChild(canvas);
-	//
-	Event.add(window, "resize", function() {
-		canvas.style.width = window.innerWidth + "px";
-		canvas.style.height = window.innerHeight + "px";
-		ctx.drawImage(theSphere = sphere(percent), 0, 0)
-	});
-	Event.add(d, "scroll", function(e) {
-		var percent = 1 - document.body.scrollTop / document.body.scrollHeight;
-		ctx.drawImage(theSphere = sphere(percent), 0, 0);
-		onMouseMove();
-	});
-
-	var theSphere;
-	var px = window.innerWidth / 2;
-	var py = window.innerHeight / 2;
-	var onMouseMove = function(event) {
-		ctx.drawImage(theSphere, 0, 0);
-		if (event) {
-			var coords = Event.coords(event);
-			coords.x -= document.body.scrollLeft;
-			coords.y -= document.body.scrollTop;
-			px = coords.x;
-			py = coords.y;
-		} else { // 
-			var coords = { x: px, y: py };
-		}
-		//
-		var x = (coords.x / window.innerWidth) * 255 - 127; // grab mouse pixel coords, center at midpoint
-		var y = (coords.y / window.innerHeight) * 255 - 127;
-		var imageData = ctx.getImageData(0, 0, canvas.width, canvas.height); // get image data
-		var data = imageData.data;
-		for(var n = 0, length = data.length; n < length; n += 4) {
-			data[n] = data[n] + x - y; // red (control left)
-			data[n + 1] = data[n + 1] - x - y; // green (control right)
-			data[n + 2] = data[n + 2] + y + y; // blue (control down)
-		}
-		ctx.putImageData(imageData, 0, 0);
-	};
-	Event.add(d, "mousemove", onMouseMove);
-	//
-	function sphere(top) { // create Sphere image, and apply to <canvas>
-		var canvas1 = document.createElement("canvas");
-		var ctx = canvas1.getContext("2d");
-		var w = 75;
-		var left = -20;
-		var top = top * -50;
-		canvas.width = canvas1.width = w * window.innerWidth / window.innerHeight;
-		canvas.height = canvas1.height = w;
-		ctx.fillRect(0, 0, window.innerWidth, window.innerHeight);
-		n = 360; while(n--) { // go through hues
-			var x = left + w;
-			var y = top + w;
-			var g = ctx.createLinearGradient(x, top, x, y);
-			g.addColorStop(0, "#000");
-			g.addColorStop(.5, "hsl("+((n + 60) % 360)+",100%,50%)");
-			g.addColorStop(1, "#FFF");
-			ctx.beginPath(); // draw triangle
-			ctx.moveTo(x, top);
-			ctx.lineTo(x, y);
-			ctx.lineTo(x + 2, y);
-			ctx.lineTo(x + 5, top);
-			ctx.fillStyle = g; // apply gradient
-			ctx.fill();
-			ctx.translate(x, y); // rotate + translate into position
-			ctx.rotate((1 / 360) * Math.PI * 2);
-			ctx.translate(-x, -y);
-		}
-		return canvas1;
-	};
-	//
-	var percent = 1 - document.body.scrollTop / document.body.scrollHeight;
-	ctx.drawImage(theSphere = sphere(percent), 0, 0)
-};
-
-// });

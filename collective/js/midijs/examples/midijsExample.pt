@@ -49,10 +49,14 @@
 <metal:main fill-slot="main">
 <div id="content-core">
 
-<div id="sm2-container"></div>
 <div id="MIDItitle"></div>
+
+<span tal:replace="nothing">
+  <div id="sm2-container"></div>
+
   <div style="position: fixed; top: 0; left: 0; z-index: 4; border-radius: 5px; overflow: hidden;" id="colors"></div>
   <div style="text-align: center; border-radius: 5px; position: absolute; top: -70px; left: -40px; opacity: 0.9" id="colors"></div>
+</span>
 
 <div class="player" style="height: 42px; box-shadow: 0 -1px #000; margin-bottom: 0; border-bottom-right-radius: 0; border-bottom-left-radius: 0;">
   <div style="margin: 0 auto; width: 160px; float: right;">
