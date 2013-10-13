@@ -4,3 +4,11 @@ try:
 except ImportError:
     from pkgutil import extend_path
     __path__ = extend_path(__path__, __name__)
+
+
+from Products.CMFCore.DirectoryView import registerFileExtension
+from Products.CMFCore.FSFile import FSFile
+
+registerFileExtension('mid', FSFile)
+registerFileExtension('mp3', FSFile)
+registerFileExtension('swf', FSFile)
