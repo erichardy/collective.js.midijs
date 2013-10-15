@@ -48,17 +48,6 @@
  <javascript cacheable="False" compression="none" cookable="True"
     enabled="False" expression=""
     id="++resource++midijs/js/Widgets/Loader.js" inline="False"/> 
-
- <javascript cacheable="False" compression="none" cookable="True"
-    enabled="False" expression=""
-    id="++resource++midijs/inc/jasmid/stream.js" inline="False"/>
-
- <javascript cacheable="False" compression="none" cookable="True"
-    enabled="False" expression=""
-    id="++resource++midijs/inc/jasmid/midifile.js" inline="False"/>
- <javascript cacheable="False" compression="none" cookable="True"
-    enabled="False" expression=""
-    id="++resource++midijs/inc/jasmid/replayer.js" inline="False"/>
     
  <javascript cacheable="False" compression="none" cookable="True"
     enabled="False" expression=""

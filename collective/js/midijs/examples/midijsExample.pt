@@ -33,9 +33,10 @@
 
 	
 	
-	<script type="text/javascript" tal:attributes="src string:${portal_url}/++resource++midijs/inc/jasmid/stream.js"></script>
-	<script type="text/javascript" tal:attributes="src string:${portal_url}/++resource++midijs/inc/jasmid/midifile.js"></script>
-	<script type="text/javascript" tal:attributes="src string:${portal_url}/++resource++midijs/inc/jasmid/replayer.js"></script>
+	<script type="text/javascript" tal:attributes="src string:${portal_url}/++resource++collective.js.jasmid/js/stream.js"></script>
+	<script type="text/javascript" tal:attributes="src string:${portal_url}/++resource++collective.js.jasmid/js/midifile.js"></script>
+	<script type="text/javascript" tal:attributes="src string:${portal_url}/++resource++collective.js.jasmid/js/replayer.js"></script>
+	<script type="text/javascript" tal:attributes="src string:${portal_url}/++resource++collective.js.jasmid/js/synth.js"></script>
 
 <script type="text/javascript" tal:attributes="src string:${portal_url}/++resource++midijs/js/example.js"></script>
 
