@@ -11,4 +11,13 @@
       permission="zope2.View"
       />
 
+<browser:page
+      name="midijs-example2"
+      for="*"
+      class=".midijsExample2.Example"
+      template="midijsExample2.pt"
+      permission="zope2.View"
+      />
+
+
 </configure>
