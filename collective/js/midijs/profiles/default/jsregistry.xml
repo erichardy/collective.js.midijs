@@ -1,76 +1,80 @@
 <?xml version="1.0"?>
-<object name="portal_javascripts">
+<object name="portal_javascripts" meta_type="JavaScripts Registry">
 
  <javascript cacheable="False" compression="none" cookable="True"
     enabled="False" expression=""
-    id="++resource++midijs/js/Window/Event.js" inline="False"/> 
+    id="js/Window/Event.js" inline="False"/> 
  <javascript cacheable="False" compression="none" cookable="True"
     enabled="False" expression=""
-    id="++resource++midijs/js/Window/Event.Mouse.js" inline="False"/> 
+    id="js/Window/Event.Mouse.js" inline="False"/> 
 
  <javascript cacheable="False" compression="none" cookable="True"
     enabled="False" expression=""
-    id="++resource++midijs/inc/Base64.js" inline="False"/>
+    id="inc/Base64.js" inline="False"/>
     
  <javascript cacheable="False" compression="none" cookable="True"
     enabled="False" expression=""
-    id="++resource++midijs/inc/base64binary.js" inline="False"/>
+    id="inc/base64binary.js" inline="False"/>
     
  <javascript cacheable="False" compression="none" cookable="True"
     enabled="False" expression=""
-    id="++resource++midijs/inc/WebMIDIAPI.js" inline="False"/> 
+    id="inc/WebMIDIAPI.js" inline="False"/> 
 
  <javascript cacheable="False" compression="none" cookable="True"
     enabled="False" expression=""
-    id="++resource++midijs/js/Window/DOMLoader.XMLHttp.js" inline="False"/>
+    id="js/Window/DOMLoader.XMLHttp.js" inline="False"/>
  <javascript cacheable="False" compression="none" cookable="True"
     enabled="False" expression=""
-    id="++resource++midijs/js/Window/DOMLoader.script.js" inline="False"/> 
+    id="js/Window/DOMLoader.script.js" inline="False"/> 
 
  <javascript cacheable="False" compression="none" cookable="True"
     enabled="False" expression=""
-    id="++resource++midijs/js/MIDI/AudioDetect.js" inline="False"/>
+    id="js/MIDI/AudioDetect.js" inline="False"/>
  <javascript cacheable="False" compression="none" cookable="True"
     enabled="False" expression=""
-    id="++resource++midijs/js/MIDI/LoadPlugin.js" inline="False"/>
+    id="js/MIDI/LoadPlugin.js" inline="False"/>
  <javascript cacheable="False" compression="none" cookable="True"
     enabled="False" expression=""
-    id="++resource++midijs/inc/SoundManager2/script/soundmanager2.js"
+    id="inc/SoundManager2/script/soundmanager2.js"
     inline="False"/>
 
  <javascript cacheable="False" compression="none" cookable="True"
     enabled="False" expression=""
-    id="++resource++midijs/js/MIDI/Plugin.js" inline="False"/> 
+    id="js/MIDI/Plugin.js" inline="False"/> 
  <javascript cacheable="False" compression="none" cookable="True"
     enabled="False" expression=""
-    id="++resource++midijs/js/MIDI/Player.js" inline="False"/>
+    id="js/MIDI/Player.js" inline="False"/>
 
  <javascript cacheable="False" compression="none" cookable="True"
     enabled="False" expression=""
-    id="++resource++midijs/js/Widgets/Loader.js" inline="False"/> 
+    id="js/Widgets/Loader.js" inline="False"/> 
     
  <javascript cacheable="False" compression="none" cookable="True"
     enabled="False" expression=""
-    id="++resource++midijs/soundfont/acoustic_grand_piano-mp3.js" inline="False"/> 
+    id="soundfont/acoustic_grand_piano-mp3.js" inline="False"/> 
  <javascript cacheable="False" compression="none" cookable="True"
     enabled="False" expression=""
-    id="++resource++midijs/soundfont/acoustic_grand_piano-ogg.js" inline="False"/> 
+    id="soundfont/acoustic_grand_piano-ogg.js" inline="False"/> 
  <javascript cacheable="False" compression="none" cookable="True"
     enabled="False" expression=""
-    id="++resource++midijs/soundfont/synth_drum-ogg.js" inline="False"/> 
+    id="soundfont/synth_drum-ogg.js" inline="False"/> 
 
  <javascript cacheable="False" compression="none" cookable="True"
     enabled="False" expression=""
-    id="++resource++midijs/js/MusicTheory/Synesthesia.js" inline="False"/> 
+    id="js/MusicTheory/Synesthesia.js" inline="False"/> 
  <javascript cacheable="False" compression="none" cookable="True"
     enabled="False" expression=""
-    id="++resource++midijs/js/Color/SpaceW3.js" inline="False"/> 
-
+    id="js/Color/SpaceW3.js" inline="False"/>
 
  <javascript cacheable="False" compression="none" cookable="True"
     enabled="False" expression=""
-    id="++resource++midijs/js/example.js" inline="False"/> 
-
+    id="inc/jasmid/stream.js" inline="False"/>
+ <javascript cacheable="False" compression="none" cookable="True"
+    enabled="False" expression=""
+    id="inc/jasmid/midifile.js" inline="False"/>
+ <javascript cacheable="False" compression="none" cookable="True"
+    enabled="False" expression=""
+    id="inc/jasmid/replayer.js" inline="False"/>
 
 </object>
 

@@ -8,11 +8,6 @@
 
   <include package=".examples" />
 
-  <browser:resourceDirectory
-    name="midijs"
-    directory="resources"
-    />
-    
   <cmf:registerDirectory name="midijs" />
 <!--
   <include file="upgrades.zcml"/>

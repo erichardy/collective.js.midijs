@@ -12,3 +12,4 @@ from Products.CMFCore.FSFile import FSFile
 registerFileExtension('mid', FSFile)
 registerFileExtension('mp3', FSFile)
 registerFileExtension('swf', FSFile)
+registerFileExtension('js', FSFile)

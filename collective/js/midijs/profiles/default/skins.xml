@@ -2,7 +2,7 @@
 <object name="portal_skins" meta_type="Plone Skins Tool">
  <object name="midijs" meta_type="Filesystem Directory View"
          directory="collective.js.midijs:skins/midijs"/>
-  <skin-path name="*">
+  <skin-path name="Plone Default">
     <layer name="midijs" insert-after="custom"/>
   </skin-path>
 </object>

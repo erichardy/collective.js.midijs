@@ -2,7 +2,9 @@
 <metadata>
   <version>1000</version>
     <dependencies>
+    <!--
       <dependency>profile-collective.js.jasmid:default</dependency>
+    -->
     </dependencies>
 
 </metadata>

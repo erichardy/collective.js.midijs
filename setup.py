@@ -25,7 +25,6 @@ setup(name='collective.js.midijs',
       zip_safe=False,
       install_requires=[
           'setuptools',
-          'collective.js.jasmid',
           # -*- Extra requirements: -*-
       ],
       extras_require = dict(
