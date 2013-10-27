@@ -12,6 +12,12 @@
 <!--
   <include file="upgrades.zcml"/>
 -->
+  <interface
+      interface=".interfaces.IMIDIjsLayer"
+      name="collective.js.midijs"
+      />
+
+
   <genericsetup:registerProfile
       name="default"
       title="collective.js.midijs"
