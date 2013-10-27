@@ -1,0 +1,4 @@
+<layers>
+    <layer name="collective.abcmusic"
+           interface="collective.js.midijs.interfaces.IMIDIjsLayer" />
+</layers>
