@@ -18,6 +18,12 @@
       template="midijsExample2.pt"
       permission="zope2.View"
       />
-
+<browser:page
+      name="demoMidijs"
+      for="*"
+      class=".demoMidiJS.Example"
+      template="demo-midi-js.pt"
+      permission="zope2.View"
+      />
 
 </configure>
