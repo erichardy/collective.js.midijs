@@ -1,53 +1,50 @@
 <?xml version="1.0"?>
 <object name="portal_javascripts" meta_type="JavaScripts Registry">
+ <javascript cacheable="False" compression="none" cookable="True"
+    enabled="False" expression=""
+    id="js/Color.js" inline="False"/> 
+ <javascript cacheable="False" compression="none" cookable="True"
+    enabled="False" expression=""
+    id="js/Event.js" inline="False"/> 
+ <javascript cacheable="False" compression="none" cookable="True"
+    enabled="False" expression=""
+    id="js/Event.Mouse.js" inline="False"/> 
 
  <javascript cacheable="False" compression="none" cookable="True"
     enabled="False" expression=""
-    id="js/Window/Event.js" inline="False"/> 
+    id="js/VersionControl.Base64.js" inline="False"/>
  <javascript cacheable="False" compression="none" cookable="True"
     enabled="False" expression=""
-    id="js/Window/Event.Mouse.js" inline="False"/> 
-
- <javascript cacheable="False" compression="none" cookable="True"
-    enabled="False" expression=""
-    id="inc/Base64.js" inline="False"/>
-    
- <javascript cacheable="False" compression="none" cookable="True"
-    enabled="False" expression=""
-    id="inc/base64binary.js" inline="False"/>
-    
+    id="js/base64binary.js" inline="False"/>
+        
  <javascript cacheable="False" compression="none" cookable="True"
     enabled="False" expression=""
     id="inc/WebMIDIAPI.js" inline="False"/> 
 
  <javascript cacheable="False" compression="none" cookable="True"
     enabled="False" expression=""
-    id="js/Window/DOMLoader.XMLHttp.js" inline="False"/>
+    id="js/DOMLoader.XMLHttp.js" inline="False"/>
  <javascript cacheable="False" compression="none" cookable="True"
     enabled="False" expression=""
-    id="js/Window/DOMLoader.script.js" inline="False"/> 
+    id="js/DOMLoader.script.js" inline="False"/> 
 
  <javascript cacheable="False" compression="none" cookable="True"
     enabled="False" expression=""
-    id="js/MIDI/AudioDetect.js" inline="False"/>
+    id="js/MIDI.audioDetect.js" inline="False"/>
  <javascript cacheable="False" compression="none" cookable="True"
     enabled="False" expression=""
-    id="js/MIDI/LoadPlugin.js" inline="False"/>
- <javascript cacheable="False" compression="none" cookable="True"
-    enabled="False" expression=""
-    id="inc/SoundManager2/script/soundmanager2.js"
-    inline="False"/>
+    id="js/MIDI.loadPlugin.js" inline="False"/>
 
  <javascript cacheable="False" compression="none" cookable="True"
     enabled="False" expression=""
-    id="js/MIDI/Plugin.js" inline="False"/> 
+    id="js/MIDI.Plugin.js" inline="False"/> 
  <javascript cacheable="False" compression="none" cookable="True"
     enabled="False" expression=""
-    id="js/MIDI/Player.js" inline="False"/>
+    id="js/MIDI.Player.js" inline="False"/>
 
  <javascript cacheable="False" compression="none" cookable="True"
     enabled="False" expression=""
-    id="js/Widgets/Loader.js" inline="False"/> 
+    id="js/Widgets.Loader.js" inline="False"/> 
     
  <javascript cacheable="False" compression="none" cookable="True"
     enabled="False" expression=""
@@ -61,20 +58,17 @@
 
  <javascript cacheable="False" compression="none" cookable="True"
     enabled="False" expression=""
-    id="js/MusicTheory/Synesthesia.js" inline="False"/> 
- <javascript cacheable="False" compression="none" cookable="True"
-    enabled="False" expression=""
-    id="js/Color/SpaceW3.js" inline="False"/>
+    id="js/MusicTheory.Synesthesia.js" inline="False"/> 
 
  <javascript cacheable="False" compression="none" cookable="True"
     enabled="False" expression=""
-    id="inc/jasmid/stream.js" inline="False"/>
+    id="js/lib/jasmid/stream.js" inline="False"/>
  <javascript cacheable="False" compression="none" cookable="True"
     enabled="False" expression=""
-    id="inc/jasmid/midifile.js" inline="False"/>
+    id="js/lib/jasmid/midifile.js" inline="False"/>
  <javascript cacheable="False" compression="none" cookable="True"
     enabled="False" expression=""
-    id="inc/jasmid/replayer.js" inline="False"/>
+    id="js/lib/jasmid/replayer.js" inline="False"/>
 
 </object>
 

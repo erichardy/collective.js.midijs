@@ -1,17 +1,16 @@
 /*
 
-	DOMLoader.XMLHttp
-	--------------------------
+	DOMLoader.XMLHttp : 0.1 : mudcu.be
+	-----------------------------------
 	DOMLoader.sendRequest({
 		url: "./dir/something.extension",
-		data: "test!",
-		onerror: function(event) {
+		error: function(event) {
 			console.log(event);
 		},
-		onload: function(response) {
+		callback: function(response) {
 			console.log(response.responseText);
 		}, 
-		onprogress: function (event) {
+		progress: function (event) {
 			var percent = event.loaded / event.total * 100 >> 0;
 			loader.message("loading: " + percent + "%");
 		}
@@ -19,20 +18,21 @@
 	
 */
 
-if (typeof(DOMLoader) === "undefined") var DOMLoader = {};
+if (typeof(DOMLoader) === "undefined") DOMLoader = {};
+
+(function() { "use strict";
 
 // Add XMLHttpRequest when not available
 
-if (typeof (XMLHttpRequest) === "undefined") {
-	var XMLHttpRequest;
-	(function () { // find equivalent for IE
+if (typeof (window.XMLHttpRequest) === "undefined") {
+	(function () { // http://www.quirksmode.org/js/xmlhttp.html
 		var factories = [
 		function () {
-			return new ActiveXObject("Msxml2.XMLHTTP")
+			return new ActiveXObject("Msxml2.XMLHTTP");
 		}, function () {
-			return new ActiveXObject("Msxml3.XMLHTTP")
+			return new ActiveXObject("Msxml3.XMLHTTP");
 		}, function () {
-			return new ActiveXObject("Microsoft.XMLHTTP")
+			return new ActiveXObject("Microsoft.XMLHTTP");
 		}];
 		for (var i = 0; i < factories.length; i++) {
 			try {
@@ -42,7 +42,7 @@ if (typeof (XMLHttpRequest) === "undefined") {
 			}
 			break;
 		}
-		XMLHttpRequest = factories[i];
+		window.XMLHttpRequest = factories[i];
 	})();
 }
 
@@ -68,7 +68,7 @@ if (typeof ((new XMLHttpRequest()).responseText) === "undefined") {
 	// inject VBScript
 	document.write(IEBinaryToArray_ByteStr_Script);
 
-	DOMLoader.sendRequest = function(conf) {
+	DOMLoader.sendRequest = function(config) {
 		// helper to convert from responseBody to a "responseText" like thing
 		function getResponseText(binary) {
 			var byteMapping = {};
@@ -83,13 +83,14 @@ if (typeof ((new XMLHttpRequest()).responseText) === "undefined") {
 			return rawBytes.replace(/[\s\S]/g, function (match) {
 				return byteMapping[match];
 			}) + lastChr;
-		};
+		}
 		//
-		var req = XMLHttpRequest();
-		req.open("GET", conf.url, true);
-		if (conf.responseType) req.responseType = conf.responseType;
-		if (conf.onerror) req.onerror = conf.onerror;
-		if (conf.onprogress) req.onprogress = conf.onprogress;
+		var req = new XMLHttpRequest();
+		req.open("GET", config.url, true);
+		req.setRequestHeader("Accept-Charset", "x-user-defined");
+		if (config.responseType) req.responseType = config.responseType;
+		if (config.error) req.onerror = config.error;
+		if (config.progress) req.onprogress = config.progress;
 		req.onreadystatechange = function (event) {
 			if (req.readyState === 4) {
 				if (req.status === 200) {
@@ -97,34 +98,29 @@ if (typeof ((new XMLHttpRequest()).responseText) === "undefined") {
 				} else {
 					req = false;
 				}
-				if (conf.onload) conf.onload(req);
+				if (config.callback) config.callback(req);
 			}
 		};
-		req.setRequestHeader("Accept-Charset", "x-user-defined");
 		req.send(null);
 		return req;
 	}
 } else {
-	DOMLoader.sendRequest = function(conf) {
+	DOMLoader.sendRequest = function(config) {
 		var req = new XMLHttpRequest();
-		req.open(conf.data ? "POST" : "GET", conf.url, true);
-		if (req.overrideMimeType) req.overrideMimeType("text/plain; charset=x-user-defined");
-		if (conf.data) req.setRequestHeader('Content-type','application/x-www-form-urlencoded');
-		if (conf.responseType) req.responseType = conf.responseType;
-		if (conf.onerror) req.onerror = conf.onerror;
-		if (conf.onprogress) req.onprogress = conf.onprogress;
+		req.open('GET', config.url, true);
+        if (req.overrideMimeType) req.overrideMimeType("text/plain; charset=x-user-defined");
+		if (config.responseType) req.responseType = config.responseType;
+		if (config.error) req.onerror = config.error;
+		if (config.progress) req.onprogress = config.progress;
 		req.onreadystatechange = function (event) {
 			if (req.readyState === 4) {
-				if (req.status !== 200 && req.status != 304) {
-					if (conf.onerror) conf.onerror(event, false);
-					return;
-				}
-				if (conf.onload) {
-					conf.onload(req);
-				}
+				if (req.status !== 200) req = false;
+				if (config.callback) config.callback(req);
 			}
 		};
-		req.send(conf.data);
+		req.send("");
 		return req;
 	};
 }
+
+})();

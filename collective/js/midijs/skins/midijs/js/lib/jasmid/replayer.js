@@ -7,41 +7,31 @@ var clone = function (o) {
 };
 
 function Replayer(midiFile, timeWarp, eventProcessor) {
+//console.log(midiFile)
 	var trackStates = [];
 	var beatsPerMinute = 120;
 	var ticksPerBeat = midiFile.header.ticksPerBeat;
-	
 	for (var i = 0; i < midiFile.tracks.length; i++) {
 		trackStates[i] = {
-			'nextEventIndex': 0,
-			'ticksToNextEvent': (
-				midiFile.tracks[i].length ?
-					midiFile.tracks[i][0].deltaTime :
-					null
+			"nextEventIndex": 0,
+			"ticksToNextEvent": (
+				midiFile.tracks[i].length ? midiFile.tracks[i][0].deltaTime : null
 			)
 		};
 	}
-
-	var nextEventInfo;
-	var samplesToNextEvent = 0;
-	
 	function getNextEvent() {
 		var ticksToNextEvent = null;
 		var nextEventTrack = null;
 		var nextEventIndex = null;
-		
 		for (var i = 0; i < trackStates.length; i++) {
-			if (
-				trackStates[i].ticksToNextEvent != null
-				&& (ticksToNextEvent == null || trackStates[i].ticksToNextEvent < ticksToNextEvent)
-			) {
+			if (trackStates[i].ticksToNextEvent != null && (ticksToNextEvent == null || trackStates[i].ticksToNextEvent < ticksToNextEvent)) {
 				ticksToNextEvent = trackStates[i].ticksToNextEvent;
 				nextEventTrack = i;
 				nextEventIndex = trackStates[i].nextEventIndex;
 			}
 		}
 		if (nextEventTrack != null) {
-			/* consume event from that track */
+			/// consume event from that track
 			var nextEvent = midiFile.tracks[nextEventTrack][nextEventIndex];
 			if (midiFile.tracks[nextEventTrack][nextEventIndex + 1]) {
 				trackStates[nextEventTrack].ticksToNextEvent += midiFile.tracks[nextEventTrack][nextEventIndex + 1].deltaTime;
@@ -49,7 +39,7 @@ function Replayer(midiFile, timeWarp, eventProcessor) {
 				trackStates[nextEventTrack].ticksToNextEvent = null;
 			}
 			trackStates[nextEventTrack].nextEventIndex += 1;
-			/* advance timings on all tracks by ticksToNextEvent */
+			/// advance timings on all tracks by ticksToNextEvent
 			for (var i = 0; i < trackStates.length; i++) {
 				if (trackStates[i].ticksToNextEvent != null) {
 					trackStates[i].ticksToNextEvent -= ticksToNextEvent
@@ -70,15 +60,11 @@ function Replayer(midiFile, timeWarp, eventProcessor) {
 	//
 	function processEvents() {
 		function processNext() {
-			if ( midiEvent.event.type == "meta" && midiEvent.event.subtype == "setTempo" ) {
-				// tempo change events can occur anywhere in the middle and affect events that follow
-				beatsPerMinute = 60000000 / midiEvent.event.microsecondsPerBeat;
-			} 
 			if (midiEvent.ticksToEvent > 0) {
 				var beatsToGenerate = midiEvent.ticksToEvent / ticksPerBeat;
 				var secondsToGenerate = beatsToGenerate / (beatsPerMinute / 60);
 			}
-			var time = (secondsToGenerate * 1000 * timeWarp) || 0;
+			var time = secondsToGenerate * 1000 * timeWarp || 0;
 			temporal.push([ midiEvent, time]);
 			midiEvent = getNextEvent();
 		};
@@ -90,6 +76,7 @@ function Replayer(midiFile, timeWarp, eventProcessor) {
 	processEvents();
 	return {
 		"getData": function() {
+//		console.log(temporal)
 			return clone(temporal);
 		}
 	};
