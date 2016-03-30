@@ -5,7 +5,7 @@ version = '0.1'
 
 setup(name='collective.js.midijs',
       version=version,
-      description="",
+      description="integration of https://github.com/mudcube/MIDI.js in plone",
       long_description=open("README.txt").read() + "\n" +
                        open(os.path.join("docs", "HISTORY.txt")).read(),
       # Get more strings from
